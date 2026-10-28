@@ -1,49 +1,74 @@
-# Name: Mehedi  hasan
-# ID: 22-47502-3
-# Section: B
-
+# Name: Mehedi Hasan
+## ID: 22-47502-3
+## Section: B
 
 # Product Management API
-- Backend database setup steps, installation and run commands, and the endpoint lis Setup & Run Guide
 
-````bash
-
-This guide will help you set up and run the NestJS backend project locally.
-
-## 🚀 Prerequisites
-Before starting, ensure the following are installed:
-- Node.js v22 or later
-- PostgreSQL
-- Redis
-- npm, yarn, or pnpm 
-- Docker 
+Backend database setup steps, installation and run commands, and the endpoint list.
 
 ---
 
-## 📦 Install Dependencies
-Use following commands:
+# ⚙️ Setup & Run Guide
+
+This guide helps you set up and run the NestJS backend project locally.
+
+## Prerequisites
+
+Before starting, make sure these are installed:
+
+- Node.js v22 or later
+- PostgreSQL
+- pnpm
+
+---
+
+## Install Dependencies
 
 ```bash
 pnpm install
+```
 
-````
-
+---
 
 # 🗄️ Database Setup & Migrations
 
-Create the database
+## Environment Variables
+
+Copy the example file and set your DB credentials:
 
 ```bash
-create db user_mangement
-
+cp .env.example .env
 ```
 
-Run migrations
+`.env.example` contents:
+
+```dotenv
+# App
+NODE_ENV=development
+PORT=5001
+
+# Database (PostgreSQL)
+DB_CLIENT=postgres
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=your_password_here
+DB_DATABASE=user_management
+```
+
+## Create the Database
+
+```sql
+CREATE DATABASE user_management;
+```
+
+## Run Migrations
 
 ```bash
 pnpm run migration:run
+```
 
-
+---
 
 # ▶️ Running the Backend (Development)
 
@@ -51,25 +76,37 @@ Start the NestJS app:
 
 ```bash
 pnpm start:dev
-
 ```
 
+---
 
-```
+# 🔗 Endpoints
 
-# Endpoints
+## Employees
 
-GET /employees
-POST /employeesGET /employees/fd3e468e-ac91-46a0-bf2e-110ec4175056
-PATCH /employees/fd3e468e-ac91-46a0-bf2e-110ec4175056
-DELETE /employess
+- GET /employees
+- POST /employees
+- GET /employees/fd3e468e-ac91-46a0-bf2e-110ec4175056
+- PATCH /employees/fd3e468e-ac91-46a0-bf2e-110ec4175056
+- DELETE /employess/6d3e468e-ac91-46a0-bf2e-110ec4175056
+
+## Products
+
+- GET /products
+- POST /products
+- GET /products/fd3e468e-ac91-46a0-bf2e-110ec4175056
+- PATCH /products/fd3e468e-ac91-46a0-bf2e-110ec4175056
+- DELETE /products/7d3e468e-ac91-46a0-bf2e-110ec4175056
+---
 
 # 📁 Project Structure (Overview)
 
 ```bash
 /project-root
   ├─ src/
-  │   ├─ modules/employee and product
+  │   ├─ modules/
+  │   │   ├─ employee/
+  │   │   └─ product/
   │   ├─ common/
   │   ├─ config/
   │   ├─ main.ts
@@ -79,5 +116,4 @@ DELETE /employess
   ├─ .env.example
   ├─ package.json
   └─ tsconfig.json
-
 ```
