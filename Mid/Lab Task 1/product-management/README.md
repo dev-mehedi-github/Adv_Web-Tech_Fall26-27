@@ -1,9 +1,10 @@
 # Name: Mehedi  hasan
-# ID: 122-47502-3
+# ID: 22-47502-3
 # Section: B
 
 
-# Backend database setup steps, installation and run commands, and the endpoint lis Setup & Run Guide
+# Product Management API
+- Backend database setup steps, installation and run commands, and the endpoint lis Setup & Run Guide
 
 ````bash
 
@@ -14,36 +15,19 @@ Before starting, ensure the following are installed:
 - Node.js v22 or later
 - PostgreSQL
 - Redis
-- npm, yarn, or pnpm (any package manager)
-- Docker (optional, for containerized setup)
+- npm, yarn, or pnpm 
+- Docker 
 
 ---
 
 ## 📦 Install Dependencies
-Use any of the following commands:
+Use following commands:
 
 ```bash
 pnpm install
-# or
-yarn install
-# or
-npm install
-
 
 ````
 
-# 🔧 Environment Variables
-
-Go to the project root directory
-Find the file .env.example
-Create a .env file in the same directory
-Copy all content from .env.example into .env
-Update values based on your local environment
-Example:
-
-```bash
-cp .env.example .env
-```
 
 # 🗄️ Database Setup & Migrations
 
@@ -72,6 +56,13 @@ pnpm start:dev
 
 
 ```
+
+# Endpoints
+
+GET /employees
+POST /employeesGET /employees/fd3e468e-ac91-46a0-bf2e-110ec4175056
+PATCH /employees/fd3e468e-ac91-46a0-bf2e-110ec4175056
+DELETE /employess
 
 # 📁 Project Structure (Overview)
 
