@@ -22,3 +22,5 @@ async function fetchStudent(id: number): Promise<{ id: number; name: string }> {
 fetchStudent(1)
   .then(student => console.log(student))
   .catch(error => console.error(error));
+
+  
