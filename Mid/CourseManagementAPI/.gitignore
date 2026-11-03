@@ -402,4 +402,4 @@ dist
 .webpack
 .serverless/**/*.zip
 
-Mid/CourseManagementAPI/.vscode/settings.json
+settings.json
