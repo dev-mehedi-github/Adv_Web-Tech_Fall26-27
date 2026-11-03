@@ -43,7 +43,7 @@ export class UpdateCourseDto{
 
     @IsNotEmpty()
     instructor!: string;
-    
+
     @IsOptional()
     description?: string;
 
